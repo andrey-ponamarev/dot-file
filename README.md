@@ -1,4 +1,4 @@
-# dot-file
+# Instruction:
 ### npm i
 ### npm i -g bower
 ### bower i
