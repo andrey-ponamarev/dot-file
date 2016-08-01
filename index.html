@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #graph {
+            width: 100px;
+        }
+        #dfile {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="graph"></div>
+<textarea id="dfile">
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] module.bastion.atlas_artifact.bastion_ami" [label = "atlas_artifact.bastion_ami", shape = "box"]
+		"[root] module.bastion.aws_eip.bastion_eip" [label = "aws_eip.bastion_eip", shape = "box"]
+		"[root] module.bastion.aws_iam_instance_profile.bastion_profile" [label = "aws_iam_instance_profile.bastion_profile", shape = "box"]
+		"[root] module.bastion.aws_iam_role.bastion_role" [label = "aws_iam_role.bastion_role", shape = "box"]
+		"[root] module.bastion.aws_iam_role_policy.monitoring" [label = "aws_iam_role_policy.monitoring", shape = "box"]
+		"[root] module.bastion.aws_iam_role_policy.tags" [label = "aws_iam_role_policy.tags", shape = "box"]
+		"[root] module.bastion.aws_instance.bastion" [label = "aws_instance.bastion", shape = "box"]
+		"[root] module.bastion.aws_route53_record.bastion" [label = "aws_route53_record.bastion", shape = "box"]
+		"[root] module.bastion.aws_security_group.bastion_sg" [label = "aws_security_group.bastion_sg", shape = "box"]
+		"[root] module.bastion.aws_security_group_rule.ssh_whitelist" [label = "aws_security_group_rule.ssh_whitelist", shape = "box"]
+		"[root] module.bastion.provider.atlas" [label = "provider.atlas", shape = "diamond"]
+		"[root] module.bastion.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.bastion.provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] module.bastion.provider.terraform" [label = "provider.terraform", shape = "diamond"]
+		"[root] module.bastion.template_file.user_data" [label = "template_file.user_data", shape = "box"]
+		"[root] module.bastion.terraform_remote_state.vpc" [label = "terraform_remote_state.vpc", shape = "box"]
+		"[root] module.consul.atlas_artifact.consul_ami" [label = "atlas_artifact.consul_ami", shape = "box"]
+		"[root] module.consul.aws_security_group_rule.cli_rpc_tcp" [label = "aws_security_group_rule.cli_rpc_tcp", shape = "box"]
+		"[root] module.consul.aws_security_group_rule.dns_tcp" [label = "aws_security_group_rule.dns_tcp", shape = "box"]
+		"[root] module.consul.aws_security_group_rule.dns_udp" [label = "aws_security_group_rule.dns_udp", shape = "box"]
+		"[root] module.consul.aws_security_group_rule.http_api_tcp" [label = "aws_security_group_rule.http_api_tcp", shape = "box"]
+		"[root] module.consul.aws_security_group_rule.serf_lan_tcp" [label = "aws_security_group_rule.serf_lan_tcp", shape = "box"]
+		"[root] module.consul.aws_security_group_rule.serf_lan_udp" [label = "aws_security_group_rule.serf_lan_udp", shape = "box"]
+		"[root] module.consul.aws_security_group_rule.server_rpc_tcp" [label = "aws_security_group_rule.server_rpc_tcp", shape = "box"]
+		"[root] module.consul.module.consul-role.aws_iam_instance_profile.instance_profile" [label = "aws_iam_instance_profile.instance_profile", shape = "box"]
+		"[root] module.consul.module.consul-role.aws_iam_role.role" [label = "aws_iam_role.role", shape = "box"]
+		"[root] module.consul.module.consul-role.aws_iam_role_policy.monitoring_policy" [label = "aws_iam_role_policy.monitoring_policy", shape = "box"]
+		"[root] module.consul.module.consul-role.aws_iam_role_policy.s3_policy" [label = "aws_iam_role_policy.s3_policy", shape = "box"]
+		"[root] module.consul.module.consul-role.aws_iam_role_policy.tags_policy" [label = "aws_iam_role_policy.tags_policy", shape = "box"]
+		"[root] module.consul.module.consul-role.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.consul.module.consul_asg.aws_autoscaling_group.asg" [label = "aws_autoscaling_group.asg", shape = "box"]
+		"[root] module.consul.module.consul_asg.aws_launch_configuration.lc" [label = "aws_launch_configuration.lc", shape = "box"]
+		"[root] module.consul.module.consul_asg.aws_security_group.sg_asg" [label = "aws_security_group.sg_asg", shape = "box"]
+		"[root] module.consul.module.consul_asg.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.consul.module.consul_asg.provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] module.consul.module.consul_asg.template_file.user_data" [label = "template_file.user_data", shape = "box"]
+		"[root] module.consul.provider.atlas" [label = "provider.atlas", shape = "diamond"]
+		"[root] module.consul.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.consul.provider.template (disabled)" [label = "provider.template (disabled)", shape = "diamond"]
+		"[root] module.consul.provider.terraform" [label = "provider.terraform", shape = "diamond"]
+		"[root] module.consul.terraform_remote_state.vpc" [label = "terraform_remote_state.vpc", shape = "box"]
+		"[root] module.haproxy.atlas_artifact.haproxy_ami" [label = "atlas_artifact.haproxy_ami", shape = "box"]
+		"[root] module.haproxy.aws_elb.haproxy_elb" [label = "aws_elb.haproxy_elb", shape = "box"]
+		"[root] module.haproxy.aws_route53_record.base" [label = "aws_route53_record.base", shape = "box"]
+		"[root] module.haproxy.aws_route53_record.wildcard" [label = "aws_route53_record.wildcard", shape = "box"]
+		"[root] module.haproxy.aws_security_group.haproxy_elb_sg" [label = "aws_security_group.haproxy_elb_sg", shape = "box"]
+		"[root] module.haproxy.aws_security_group_rule.elb" [label = "aws_security_group_rule.elb", shape = "box"]
+		"[root] module.haproxy.module.haproxy_asg.aws_autoscaling_group.asg" [label = "aws_autoscaling_group.asg", shape = "box"]
+		"[root] module.haproxy.module.haproxy_asg.aws_launch_configuration.lc" [label = "aws_launch_configuration.lc", shape = "box"]
+		"[root] module.haproxy.module.haproxy_asg.aws_security_group.sg_asg" [label = "aws_security_group.sg_asg", shape = "box"]
+		"[root] module.haproxy.module.haproxy_asg.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.haproxy.module.haproxy_asg.provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] module.haproxy.module.haproxy_asg.template_file.user_data" [label = "template_file.user_data", shape = "box"]
+		"[root] module.haproxy.module.haproxy_role.aws_iam_instance_profile.instance_profile" [label = "aws_iam_instance_profile.instance_profile", shape = "box"]
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role.role" [label = "aws_iam_role.role", shape = "box"]
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role_policy.monitoring_policy" [label = "aws_iam_role_policy.monitoring_policy", shape = "box"]
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role_policy.s3_policy" [label = "aws_iam_role_policy.s3_policy", shape = "box"]
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role_policy.tags_policy" [label = "aws_iam_role_policy.tags_policy", shape = "box"]
+		"[root] module.haproxy.module.haproxy_role.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.haproxy.provider.atlas" [label = "provider.atlas", shape = "diamond"]
+		"[root] module.haproxy.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.haproxy.provider.template (disabled)" [label = "provider.template (disabled)", shape = "diamond"]
+		"[root] module.haproxy.provider.terraform" [label = "provider.terraform", shape = "diamond"]
+		"[root] module.haproxy.terraform_remote_state.vpc" [label = "terraform_remote_state.vpc", shape = "box"]
+		"[root] module.kafka.atlas_artifact.confluent_kafka" [label = "atlas_artifact.confluent_kafka", shape = "box"]
+		"[root] module.kafka.aws_instance.kafka" [label = "aws_instance.kafka", shape = "box"]
+		"[root] module.kafka.module.kafka-role.aws_iam_instance_profile.instance_profile" [label = "aws_iam_instance_profile.instance_profile", shape = "box"]
+		"[root] module.kafka.module.kafka-role.aws_iam_role.role" [label = "aws_iam_role.role", shape = "box"]
+		"[root] module.kafka.module.kafka-role.aws_iam_role_policy.monitoring_policy" [label = "aws_iam_role_policy.monitoring_policy", shape = "box"]
+		"[root] module.kafka.module.kafka-role.aws_iam_role_policy.s3_policy" [label = "aws_iam_role_policy.s3_policy", shape = "box"]
+		"[root] module.kafka.module.kafka-role.aws_iam_role_policy.tags_policy" [label = "aws_iam_role_policy.tags_policy", shape = "box"]
+		"[root] module.kafka.module.kafka-role.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.kafka.provider.atlas" [label = "provider.atlas", shape = "diamond"]
+		"[root] module.kafka.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.kafka.provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] module.kafka.provider.terraform" [label = "provider.terraform", shape = "diamond"]
+		"[root] module.kafka.template_file.user_data" [label = "template_file.user_data", shape = "box"]
+		"[root] module.kafka.terraform_remote_state.vpc" [label = "terraform_remote_state.vpc", shape = "box"]
+		"[root] module.mesos.atlas_artifact.mesos_master" [label = "atlas_artifact.mesos_master", shape = "box"]
+		"[root] module.mesos.atlas_artifact.mesos_slave" [label = "atlas_artifact.mesos_slave", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-asg.aws_autoscaling_group.asg" [label = "aws_autoscaling_group.asg", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-asg.aws_launch_configuration.lc" [label = "aws_launch_configuration.lc", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-asg.aws_security_group.sg_asg" [label = "aws_security_group.sg_asg", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-asg.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.mesos.module.mesosmaster-asg.provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] module.mesos.module.mesosmaster-asg.template_file.user_data" [label = "template_file.user_data", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_instance_profile.instance_profile" [label = "aws_iam_instance_profile.instance_profile", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role.role" [label = "aws_iam_role.role", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role_policy.monitoring_policy" [label = "aws_iam_role_policy.monitoring_policy", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role_policy.s3_policy" [label = "aws_iam_role_policy.s3_policy", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role_policy.tags_policy" [label = "aws_iam_role_policy.tags_policy", shape = "box"]
+		"[root] module.mesos.module.mesosmaster-role.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.mesos.module.mesosslave-asg.aws_autoscaling_group.asg" [label = "aws_autoscaling_group.asg", shape = "box"]
+		"[root] module.mesos.module.mesosslave-asg.aws_launch_configuration.lc" [label = "aws_launch_configuration.lc", shape = "box"]
+		"[root] module.mesos.module.mesosslave-asg.aws_security_group.sg_asg" [label = "aws_security_group.sg_asg", shape = "box"]
+		"[root] module.mesos.module.mesosslave-asg.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.mesos.module.mesosslave-asg.provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] module.mesos.module.mesosslave-asg.template_file.user_data" [label = "template_file.user_data", shape = "box"]
+		"[root] module.mesos.module.mesosslave-role.aws_iam_instance_profile.instance_profile" [label = "aws_iam_instance_profile.instance_profile", shape = "box"]
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role.role" [label = "aws_iam_role.role", shape = "box"]
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role_policy.monitoring_policy" [label = "aws_iam_role_policy.monitoring_policy", shape = "box"]
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role_policy.s3_policy" [label = "aws_iam_role_policy.s3_policy", shape = "box"]
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role_policy.tags_policy" [label = "aws_iam_role_policy.tags_policy", shape = "box"]
+		"[root] module.mesos.module.mesosslave-role.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.mesos.provider.atlas" [label = "provider.atlas", shape = "diamond"]
+		"[root] module.mesos.provider.aws (disabled)" [label = "provider.aws (disabled)", shape = "diamond"]
+		"[root] module.mesos.provider.template (disabled)" [label = "provider.template (disabled)", shape = "diamond"]
+		"[root] module.mesos.provider.terraform" [label = "provider.terraform", shape = "diamond"]
+		"[root] module.mesos.terraform_remote_state.vpc" [label = "terraform_remote_state.vpc", shape = "box"]
+		"[root] module.vpc.atlas_artifact.nat_ami" [label = "atlas_artifact.nat_ami", shape = "box"]
+		"[root] module.vpc.aws_security_group_rule.nat_atlas_scada" [label = "aws_security_group_rule.nat_atlas_scada", shape = "box"]
+		"[root] module.vpc.aws_security_group_rule.nat_http" [label = "aws_security_group_rule.nat_http", shape = "box"]
+		"[root] module.vpc.aws_security_group_rule.nat_https" [label = "aws_security_group_rule.nat_https", shape = "box"]
+		"[root] module.vpc.aws_security_group_rule.nat_icmp" [label = "aws_security_group_rule.nat_icmp", shape = "box"]
+		"[root] module.vpc.aws_security_group_rule.nat_jnlp" [label = "aws_security_group_rule.nat_jnlp", shape = "box"]
+		"[root] module.vpc.aws_security_group_rule.nat_ssh" [label = "aws_security_group_rule.nat_ssh", shape = "box"]
+		"[root] module.vpc.module.vpc_az.aws_iam_instance_profile.nat_profile" [label = "aws_iam_instance_profile.nat_profile", shape = "box"]
+		"[root] module.vpc.module.vpc_az.aws_iam_role.nat_role" [label = "aws_iam_role.nat_role", shape = "box"]
+		"[root] module.vpc.module.vpc_az.aws_iam_role_policy.monitoring" [label = "aws_iam_role_policy.monitoring", shape = "box"]
+		"[root] module.vpc.module.vpc_az.aws_instance.nat" [label = "aws_instance.nat", shape = "box"]
+		"[root] module.vpc.module.vpc_az.aws_route_table.private_rt" [label = "aws_route_table.private_rt", shape = "box"]
+		"[root] module.vpc.module.vpc_az.aws_route_table_association.private_rta" [label = "aws_route_table_association.private_rta", shape = "box"]
+		"[root] module.vpc.module.vpc_az.aws_route_table_association.public_rta" [label = "aws_route_table_association.public_rta", shape = "box"]
+		"[root] module.vpc.module.vpc_az.aws_subnet.private" [label = "aws_subnet.private", shape = "box"]
+		"[root] module.vpc.module.vpc_az.aws_subnet.public" [label = "aws_subnet.public", shape = "box"]
+		"[root] module.vpc.module.vpc_az.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.vpc.module.vpc_az.provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] module.vpc.module.vpc_az.template_file.user_data" [label = "template_file.user_data", shape = "box"]
+		"[root] module.vpc.module.vpc_base.aws_internet_gateway.igw" [label = "aws_internet_gateway.igw", shape = "box"]
+		"[root] module.vpc.module.vpc_base.aws_route_table.public_rt" [label = "aws_route_table.public_rt", shape = "box"]
+		"[root] module.vpc.module.vpc_base.aws_security_group.environment" [label = "aws_security_group.environment", shape = "box"]
+		"[root] module.vpc.module.vpc_base.aws_security_group.nat_sg" [label = "aws_security_group.nat_sg", shape = "box"]
+		"[root] module.vpc.module.vpc_base.aws_security_group.private_sg" [label = "aws_security_group.private_sg", shape = "box"]
+		"[root] module.vpc.module.vpc_base.aws_vpc.vpc" [label = "aws_vpc.vpc", shape = "box"]
+		"[root] module.vpc.module.vpc_base.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.vpc.module.vpc_dhcp.aws_vpc_dhcp_options.dhcp" [label = "aws_vpc_dhcp_options.dhcp", shape = "box"]
+		"[root] module.vpc.module.vpc_dhcp.aws_vpc_dhcp_options_association.dns_resolver" [label = "aws_vpc_dhcp_options_association.dns_resolver", shape = "box"]
+		"[root] module.vpc.module.vpc_dhcp.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.vpc.provider.atlas" [label = "provider.atlas", shape = "diamond"]
+		"[root] module.vpc.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.vpc.provider.template (disabled)" [label = "provider.template (disabled)", shape = "diamond"]
+		"[root] module.zookeeper.atlas_artifact.zookeeper_ami" [label = "atlas_artifact.zookeeper_ami", shape = "box"]
+		"[root] module.zookeeper.aws_instance.zookeeper" [label = "aws_instance.zookeeper", shape = "box"]
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_instance_profile.instance_profile" [label = "aws_iam_instance_profile.instance_profile", shape = "box"]
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role.role" [label = "aws_iam_role.role", shape = "box"]
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role_policy.monitoring_policy" [label = "aws_iam_role_policy.monitoring_policy", shape = "box"]
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role_policy.s3_policy" [label = "aws_iam_role_policy.s3_policy", shape = "box"]
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role_policy.tags_policy" [label = "aws_iam_role_policy.tags_policy", shape = "box"]
+		"[root] module.zookeeper.module.zookeeper-role.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.zookeeper.provider.atlas" [label = "provider.atlas", shape = "diamond"]
+		"[root] module.zookeeper.provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] module.zookeeper.provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] module.zookeeper.provider.terraform" [label = "provider.terraform", shape = "diamond"]
+		"[root] module.zookeeper.template_file.user_data" [label = "template_file.user_data", shape = "box"]
+		"[root] module.zookeeper.terraform_remote_state.vpc" [label = "terraform_remote_state.vpc", shape = "box"]
+		"[root] provider.atlas (disabled)" [label = "provider.atlas (disabled)", shape = "diamond"]
+		"[root] provider.aws (disabled)" [label = "provider.aws (disabled)", shape = "diamond"]
+		"[root] provider.template (disabled)" [label = "provider.template (disabled)", shape = "diamond"]
+		"[root] provider.terraform (disabled)" [label = "provider.terraform (disabled)", shape = "diamond"]
+		"[root] module.bastion.atlas_artifact.bastion_ami" -> "[root] module.bastion.provider.atlas"
+		"[root] module.bastion.aws_eip.bastion_eip" -> "[root] module.bastion.aws_instance.bastion"
+		"[root] module.bastion.aws_eip.bastion_eip" -> "[root] module.bastion.provider.aws"
+		"[root] module.bastion.aws_iam_instance_profile.bastion_profile" -> "[root] module.bastion.aws_iam_role.bastion_role"
+		"[root] module.bastion.aws_iam_instance_profile.bastion_profile" -> "[root] module.bastion.provider.aws"
+		"[root] module.bastion.aws_iam_role.bastion_role" -> "[root] module.bastion.provider.aws"
+		"[root] module.bastion.aws_iam_role_policy.monitoring" -> "[root] module.bastion.aws_iam_role.bastion_role"
+		"[root] module.bastion.aws_iam_role_policy.monitoring" -> "[root] module.bastion.provider.aws"
+		"[root] module.bastion.aws_iam_role_policy.tags" -> "[root] module.bastion.aws_iam_role.bastion_role"
+		"[root] module.bastion.aws_iam_role_policy.tags" -> "[root] module.bastion.provider.aws"
+		"[root] module.bastion.aws_instance.bastion" -> "[root] module.bastion.atlas_artifact.bastion_ami"
+		"[root] module.bastion.aws_instance.bastion" -> "[root] module.bastion.aws_iam_instance_profile.bastion_profile"
+		"[root] module.bastion.aws_instance.bastion" -> "[root] module.bastion.aws_security_group.bastion_sg"
+		"[root] module.bastion.aws_instance.bastion" -> "[root] module.bastion.provider.aws"
+		"[root] module.bastion.aws_instance.bastion" -> "[root] module.bastion.template_file.user_data"
+		"[root] module.bastion.aws_instance.bastion" -> "[root] module.bastion.terraform_remote_state.vpc"
+		"[root] module.bastion.aws_route53_record.bastion" -> "[root] module.bastion.aws_eip.bastion_eip"
+		"[root] module.bastion.aws_route53_record.bastion" -> "[root] module.bastion.provider.aws"
+		"[root] module.bastion.aws_security_group.bastion_sg" -> "[root] module.bastion.provider.aws"
+		"[root] module.bastion.aws_security_group.bastion_sg" -> "[root] module.bastion.terraform_remote_state.vpc"
+		"[root] module.bastion.aws_security_group_rule.ssh_whitelist" -> "[root] module.bastion.aws_security_group.bastion_sg"
+		"[root] module.bastion.aws_security_group_rule.ssh_whitelist" -> "[root] module.bastion.provider.aws"
+		"[root] module.bastion.provider.atlas" -> "[root] provider.atlas (disabled)"
+		"[root] module.bastion.provider.aws" -> "[root] provider.aws (disabled)"
+		"[root] module.bastion.provider.template" -> "[root] provider.template (disabled)"
+		"[root] module.bastion.provider.terraform" -> "[root] provider.terraform (disabled)"
+		"[root] module.bastion.template_file.user_data" -> "[root] module.bastion.provider.template"
+		"[root] module.bastion.terraform_remote_state.vpc" -> "[root] module.bastion.provider.terraform"
+		"[root] module.consul.atlas_artifact.consul_ami" -> "[root] module.consul.provider.atlas"
+		"[root] module.consul.aws_security_group_rule.cli_rpc_tcp" -> "[root] module.consul.module.consul_asg.aws_security_group.sg_asg"
+		"[root] module.consul.aws_security_group_rule.cli_rpc_tcp" -> "[root] module.consul.provider.aws"
+		"[root] module.consul.aws_security_group_rule.cli_rpc_tcp" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.aws_security_group_rule.dns_tcp" -> "[root] module.consul.module.consul_asg.aws_security_group.sg_asg"
+		"[root] module.consul.aws_security_group_rule.dns_tcp" -> "[root] module.consul.provider.aws"
+		"[root] module.consul.aws_security_group_rule.dns_tcp" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.aws_security_group_rule.dns_udp" -> "[root] module.consul.module.consul_asg.aws_security_group.sg_asg"
+		"[root] module.consul.aws_security_group_rule.dns_udp" -> "[root] module.consul.provider.aws"
+		"[root] module.consul.aws_security_group_rule.dns_udp" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.aws_security_group_rule.http_api_tcp" -> "[root] module.consul.module.consul_asg.aws_security_group.sg_asg"
+		"[root] module.consul.aws_security_group_rule.http_api_tcp" -> "[root] module.consul.provider.aws"
+		"[root] module.consul.aws_security_group_rule.http_api_tcp" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.aws_security_group_rule.serf_lan_tcp" -> "[root] module.consul.module.consul_asg.aws_security_group.sg_asg"
+		"[root] module.consul.aws_security_group_rule.serf_lan_tcp" -> "[root] module.consul.provider.aws"
+		"[root] module.consul.aws_security_group_rule.serf_lan_tcp" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.aws_security_group_rule.serf_lan_udp" -> "[root] module.consul.module.consul_asg.aws_security_group.sg_asg"
+		"[root] module.consul.aws_security_group_rule.serf_lan_udp" -> "[root] module.consul.provider.aws"
+		"[root] module.consul.aws_security_group_rule.serf_lan_udp" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.aws_security_group_rule.server_rpc_tcp" -> "[root] module.consul.module.consul_asg.aws_security_group.sg_asg"
+		"[root] module.consul.aws_security_group_rule.server_rpc_tcp" -> "[root] module.consul.provider.aws"
+		"[root] module.consul.aws_security_group_rule.server_rpc_tcp" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.module.consul-role.aws_iam_instance_profile.instance_profile" -> "[root] module.consul.module.consul-role.aws_iam_role.role"
+		"[root] module.consul.module.consul-role.aws_iam_instance_profile.instance_profile" -> "[root] module.consul.module.consul-role.provider.aws"
+		"[root] module.consul.module.consul-role.aws_iam_role.role" -> "[root] module.consul.module.consul-role.provider.aws"
+		"[root] module.consul.module.consul-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.consul.module.consul-role.aws_iam_role.role"
+		"[root] module.consul.module.consul-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.consul.module.consul-role.provider.aws"
+		"[root] module.consul.module.consul-role.aws_iam_role_policy.s3_policy" -> "[root] module.consul.module.consul-role.aws_iam_role.role"
+		"[root] module.consul.module.consul-role.aws_iam_role_policy.s3_policy" -> "[root] module.consul.module.consul-role.provider.aws"
+		"[root] module.consul.module.consul-role.aws_iam_role_policy.tags_policy" -> "[root] module.consul.module.consul-role.aws_iam_role.role"
+		"[root] module.consul.module.consul-role.aws_iam_role_policy.tags_policy" -> "[root] module.consul.module.consul-role.provider.aws"
+		"[root] module.consul.module.consul-role.provider.aws" -> "[root] module.consul.provider.aws"
+		"[root] module.consul.module.consul_asg.aws_autoscaling_group.asg" -> "[root] module.consul.module.consul_asg.aws_launch_configuration.lc"
+		"[root] module.consul.module.consul_asg.aws_autoscaling_group.asg" -> "[root] module.consul.module.consul_asg.provider.aws"
+		"[root] module.consul.module.consul_asg.aws_autoscaling_group.asg" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.module.consul_asg.aws_launch_configuration.lc" -> "[root] module.consul.atlas_artifact.consul_ami"
+		"[root] module.consul.module.consul_asg.aws_launch_configuration.lc" -> "[root] module.consul.module.consul-role.aws_iam_role.role"
+		"[root] module.consul.module.consul_asg.aws_launch_configuration.lc" -> "[root] module.consul.module.consul_asg.aws_security_group.sg_asg"
+		"[root] module.consul.module.consul_asg.aws_launch_configuration.lc" -> "[root] module.consul.module.consul_asg.provider.aws"
+		"[root] module.consul.module.consul_asg.aws_launch_configuration.lc" -> "[root] module.consul.module.consul_asg.template_file.user_data"
+		"[root] module.consul.module.consul_asg.aws_launch_configuration.lc" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.module.consul_asg.aws_security_group.sg_asg" -> "[root] module.consul.module.consul_asg.provider.aws"
+		"[root] module.consul.module.consul_asg.aws_security_group.sg_asg" -> "[root] module.consul.terraform_remote_state.vpc"
+		"[root] module.consul.module.consul_asg.provider.aws" -> "[root] module.consul.provider.aws"
+		"[root] module.consul.module.consul_asg.provider.template" -> "[root] module.consul.provider.template (disabled)"
+		"[root] module.consul.module.consul_asg.template_file.user_data" -> "[root] module.consul.module.consul_asg.provider.template"
+		"[root] module.consul.provider.atlas" -> "[root] provider.atlas (disabled)"
+		"[root] module.consul.provider.aws" -> "[root] provider.aws (disabled)"
+		"[root] module.consul.provider.template (disabled)" -> "[root] provider.template (disabled)"
+		"[root] module.consul.provider.terraform" -> "[root] provider.terraform (disabled)"
+		"[root] module.consul.terraform_remote_state.vpc" -> "[root] module.consul.provider.terraform"
+		"[root] module.haproxy.atlas_artifact.haproxy_ami" -> "[root] module.haproxy.provider.atlas"
+		"[root] module.haproxy.aws_elb.haproxy_elb" -> "[root] module.haproxy.aws_security_group.haproxy_elb_sg"
+		"[root] module.haproxy.aws_elb.haproxy_elb" -> "[root] module.haproxy.provider.aws"
+		"[root] module.haproxy.aws_elb.haproxy_elb" -> "[root] module.haproxy.terraform_remote_state.vpc"
+		"[root] module.haproxy.aws_route53_record.base" -> "[root] module.haproxy.aws_elb.haproxy_elb"
+		"[root] module.haproxy.aws_route53_record.base" -> "[root] module.haproxy.provider.aws"
+		"[root] module.haproxy.aws_route53_record.wildcard" -> "[root] module.haproxy.aws_elb.haproxy_elb"
+		"[root] module.haproxy.aws_route53_record.wildcard" -> "[root] module.haproxy.provider.aws"
+		"[root] module.haproxy.aws_security_group.haproxy_elb_sg" -> "[root] module.haproxy.provider.aws"
+		"[root] module.haproxy.aws_security_group.haproxy_elb_sg" -> "[root] module.haproxy.terraform_remote_state.vpc"
+		"[root] module.haproxy.aws_security_group_rule.elb" -> "[root] module.haproxy.aws_security_group.haproxy_elb_sg"
+		"[root] module.haproxy.aws_security_group_rule.elb" -> "[root] module.haproxy.module.haproxy_asg.aws_security_group.sg_asg"
+		"[root] module.haproxy.aws_security_group_rule.elb" -> "[root] module.haproxy.provider.aws"
+		"[root] module.haproxy.module.haproxy_asg.aws_autoscaling_group.asg" -> "[root] module.haproxy.aws_elb.haproxy_elb"
+		"[root] module.haproxy.module.haproxy_asg.aws_autoscaling_group.asg" -> "[root] module.haproxy.module.haproxy_asg.aws_launch_configuration.lc"
+		"[root] module.haproxy.module.haproxy_asg.aws_autoscaling_group.asg" -> "[root] module.haproxy.module.haproxy_asg.provider.aws"
+		"[root] module.haproxy.module.haproxy_asg.aws_autoscaling_group.asg" -> "[root] module.haproxy.terraform_remote_state.vpc"
+		"[root] module.haproxy.module.haproxy_asg.aws_launch_configuration.lc" -> "[root] module.haproxy.atlas_artifact.haproxy_ami"
+		"[root] module.haproxy.module.haproxy_asg.aws_launch_configuration.lc" -> "[root] module.haproxy.module.haproxy_asg.aws_security_group.sg_asg"
+		"[root] module.haproxy.module.haproxy_asg.aws_launch_configuration.lc" -> "[root] module.haproxy.module.haproxy_asg.provider.aws"
+		"[root] module.haproxy.module.haproxy_asg.aws_launch_configuration.lc" -> "[root] module.haproxy.module.haproxy_asg.template_file.user_data"
+		"[root] module.haproxy.module.haproxy_asg.aws_launch_configuration.lc" -> "[root] module.haproxy.module.haproxy_role.aws_iam_role.role"
+		"[root] module.haproxy.module.haproxy_asg.aws_launch_configuration.lc" -> "[root] module.haproxy.terraform_remote_state.vpc"
+		"[root] module.haproxy.module.haproxy_asg.aws_security_group.sg_asg" -> "[root] module.haproxy.module.haproxy_asg.provider.aws"
+		"[root] module.haproxy.module.haproxy_asg.aws_security_group.sg_asg" -> "[root] module.haproxy.terraform_remote_state.vpc"
+		"[root] module.haproxy.module.haproxy_asg.provider.aws" -> "[root] module.haproxy.provider.aws"
+		"[root] module.haproxy.module.haproxy_asg.provider.template" -> "[root] module.haproxy.provider.template (disabled)"
+		"[root] module.haproxy.module.haproxy_asg.template_file.user_data" -> "[root] module.haproxy.module.haproxy_asg.provider.template"
+		"[root] module.haproxy.module.haproxy_role.aws_iam_instance_profile.instance_profile" -> "[root] module.haproxy.module.haproxy_role.aws_iam_role.role"
+		"[root] module.haproxy.module.haproxy_role.aws_iam_instance_profile.instance_profile" -> "[root] module.haproxy.module.haproxy_role.provider.aws"
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role.role" -> "[root] module.haproxy.module.haproxy_role.provider.aws"
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role_policy.monitoring_policy" -> "[root] module.haproxy.module.haproxy_role.aws_iam_role.role"
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role_policy.monitoring_policy" -> "[root] module.haproxy.module.haproxy_role.provider.aws"
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role_policy.s3_policy" -> "[root] module.haproxy.module.haproxy_role.aws_iam_role.role"
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role_policy.s3_policy" -> "[root] module.haproxy.module.haproxy_role.provider.aws"
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role_policy.tags_policy" -> "[root] module.haproxy.module.haproxy_role.aws_iam_role.role"
+		"[root] module.haproxy.module.haproxy_role.aws_iam_role_policy.tags_policy" -> "[root] module.haproxy.module.haproxy_role.provider.aws"
+		"[root] module.haproxy.module.haproxy_role.provider.aws" -> "[root] module.haproxy.provider.aws"
+		"[root] module.haproxy.provider.atlas" -> "[root] provider.atlas (disabled)"
+		"[root] module.haproxy.provider.aws" -> "[root] provider.aws (disabled)"
+		"[root] module.haproxy.provider.template (disabled)" -> "[root] provider.template (disabled)"
+		"[root] module.haproxy.provider.terraform" -> "[root] provider.terraform (disabled)"
+		"[root] module.haproxy.terraform_remote_state.vpc" -> "[root] module.haproxy.provider.terraform"
+		"[root] module.kafka.atlas_artifact.confluent_kafka" -> "[root] module.kafka.provider.atlas"
+		"[root] module.kafka.aws_instance.kafka" -> "[root] module.kafka.atlas_artifact.confluent_kafka"
+		"[root] module.kafka.aws_instance.kafka" -> "[root] module.kafka.module.kafka-role.aws_iam_role.role"
+		"[root] module.kafka.aws_instance.kafka" -> "[root] module.kafka.provider.aws"
+		"[root] module.kafka.aws_instance.kafka" -> "[root] module.kafka.template_file.user_data"
+		"[root] module.kafka.aws_instance.kafka" -> "[root] module.kafka.terraform_remote_state.vpc"
+		"[root] module.kafka.module.kafka-role.aws_iam_instance_profile.instance_profile" -> "[root] module.kafka.module.kafka-role.aws_iam_role.role"
+		"[root] module.kafka.module.kafka-role.aws_iam_instance_profile.instance_profile" -> "[root] module.kafka.module.kafka-role.provider.aws"
+		"[root] module.kafka.module.kafka-role.aws_iam_role.role" -> "[root] module.kafka.module.kafka-role.provider.aws"
+		"[root] module.kafka.module.kafka-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.kafka.module.kafka-role.aws_iam_role.role"
+		"[root] module.kafka.module.kafka-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.kafka.module.kafka-role.provider.aws"
+		"[root] module.kafka.module.kafka-role.aws_iam_role_policy.s3_policy" -> "[root] module.kafka.module.kafka-role.aws_iam_role.role"
+		"[root] module.kafka.module.kafka-role.aws_iam_role_policy.s3_policy" -> "[root] module.kafka.module.kafka-role.provider.aws"
+		"[root] module.kafka.module.kafka-role.aws_iam_role_policy.tags_policy" -> "[root] module.kafka.module.kafka-role.aws_iam_role.role"
+		"[root] module.kafka.module.kafka-role.aws_iam_role_policy.tags_policy" -> "[root] module.kafka.module.kafka-role.provider.aws"
+		"[root] module.kafka.module.kafka-role.provider.aws" -> "[root] module.kafka.provider.aws"
+		"[root] module.kafka.provider.atlas" -> "[root] provider.atlas (disabled)"
+		"[root] module.kafka.provider.aws" -> "[root] provider.aws (disabled)"
+		"[root] module.kafka.provider.template" -> "[root] provider.template (disabled)"
+		"[root] module.kafka.provider.terraform" -> "[root] provider.terraform (disabled)"
+		"[root] module.kafka.template_file.user_data" -> "[root] module.kafka.provider.template"
+		"[root] module.kafka.terraform_remote_state.vpc" -> "[root] module.kafka.provider.terraform"
+		"[root] module.mesos.atlas_artifact.mesos_master" -> "[root] module.mesos.provider.atlas"
+		"[root] module.mesos.atlas_artifact.mesos_slave" -> "[root] module.mesos.provider.atlas"
+		"[root] module.mesos.module.mesosmaster-asg.aws_autoscaling_group.asg" -> "[root] module.mesos.module.mesosmaster-asg.aws_launch_configuration.lc"
+		"[root] module.mesos.module.mesosmaster-asg.aws_autoscaling_group.asg" -> "[root] module.mesos.module.mesosmaster-asg.provider.aws"
+		"[root] module.mesos.module.mesosmaster-asg.aws_autoscaling_group.asg" -> "[root] module.mesos.terraform_remote_state.vpc"
+		"[root] module.mesos.module.mesosmaster-asg.aws_launch_configuration.lc" -> "[root] module.mesos.atlas_artifact.mesos_master"
+		"[root] module.mesos.module.mesosmaster-asg.aws_launch_configuration.lc" -> "[root] module.mesos.module.mesosmaster-asg.aws_security_group.sg_asg"
+		"[root] module.mesos.module.mesosmaster-asg.aws_launch_configuration.lc" -> "[root] module.mesos.module.mesosmaster-asg.provider.aws"
+		"[root] module.mesos.module.mesosmaster-asg.aws_launch_configuration.lc" -> "[root] module.mesos.module.mesosmaster-asg.template_file.user_data"
+		"[root] module.mesos.module.mesosmaster-asg.aws_launch_configuration.lc" -> "[root] module.mesos.module.mesosmaster-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosmaster-asg.aws_launch_configuration.lc" -> "[root] module.mesos.terraform_remote_state.vpc"
+		"[root] module.mesos.module.mesosmaster-asg.aws_security_group.sg_asg" -> "[root] module.mesos.module.mesosmaster-asg.provider.aws"
+		"[root] module.mesos.module.mesosmaster-asg.aws_security_group.sg_asg" -> "[root] module.mesos.terraform_remote_state.vpc"
+		"[root] module.mesos.module.mesosmaster-asg.provider.aws" -> "[root] module.mesos.provider.aws (disabled)"
+		"[root] module.mesos.module.mesosmaster-asg.provider.template" -> "[root] module.mesos.provider.template (disabled)"
+		"[root] module.mesos.module.mesosmaster-asg.template_file.user_data" -> "[root] module.mesos.module.mesosmaster-asg.provider.template"
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_instance_profile.instance_profile" -> "[root] module.mesos.module.mesosmaster-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_instance_profile.instance_profile" -> "[root] module.mesos.module.mesosmaster-role.provider.aws"
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role.role" -> "[root] module.mesos.module.mesosmaster-role.provider.aws"
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.mesos.module.mesosmaster-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.mesos.module.mesosmaster-role.provider.aws"
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role_policy.s3_policy" -> "[root] module.mesos.module.mesosmaster-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role_policy.s3_policy" -> "[root] module.mesos.module.mesosmaster-role.provider.aws"
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role_policy.tags_policy" -> "[root] module.mesos.module.mesosmaster-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosmaster-role.aws_iam_role_policy.tags_policy" -> "[root] module.mesos.module.mesosmaster-role.provider.aws"
+		"[root] module.mesos.module.mesosmaster-role.provider.aws" -> "[root] module.mesos.provider.aws (disabled)"
+		"[root] module.mesos.module.mesosslave-asg.aws_autoscaling_group.asg" -> "[root] module.mesos.module.mesosslave-asg.aws_launch_configuration.lc"
+		"[root] module.mesos.module.mesosslave-asg.aws_autoscaling_group.asg" -> "[root] module.mesos.module.mesosslave-asg.provider.aws"
+		"[root] module.mesos.module.mesosslave-asg.aws_autoscaling_group.asg" -> "[root] module.mesos.terraform_remote_state.vpc"
+		"[root] module.mesos.module.mesosslave-asg.aws_launch_configuration.lc" -> "[root] module.mesos.atlas_artifact.mesos_slave"
+		"[root] module.mesos.module.mesosslave-asg.aws_launch_configuration.lc" -> "[root] module.mesos.module.mesosslave-asg.aws_security_group.sg_asg"
+		"[root] module.mesos.module.mesosslave-asg.aws_launch_configuration.lc" -> "[root] module.mesos.module.mesosslave-asg.provider.aws"
+		"[root] module.mesos.module.mesosslave-asg.aws_launch_configuration.lc" -> "[root] module.mesos.module.mesosslave-asg.template_file.user_data"
+		"[root] module.mesos.module.mesosslave-asg.aws_launch_configuration.lc" -> "[root] module.mesos.module.mesosslave-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosslave-asg.aws_launch_configuration.lc" -> "[root] module.mesos.terraform_remote_state.vpc"
+		"[root] module.mesos.module.mesosslave-asg.aws_security_group.sg_asg" -> "[root] module.mesos.module.mesosslave-asg.provider.aws"
+		"[root] module.mesos.module.mesosslave-asg.aws_security_group.sg_asg" -> "[root] module.mesos.terraform_remote_state.vpc"
+		"[root] module.mesos.module.mesosslave-asg.provider.aws" -> "[root] module.mesos.provider.aws (disabled)"
+		"[root] module.mesos.module.mesosslave-asg.provider.template" -> "[root] module.mesos.provider.template (disabled)"
+		"[root] module.mesos.module.mesosslave-asg.template_file.user_data" -> "[root] module.mesos.module.mesosslave-asg.provider.template"
+		"[root] module.mesos.module.mesosslave-role.aws_iam_instance_profile.instance_profile" -> "[root] module.mesos.module.mesosslave-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosslave-role.aws_iam_instance_profile.instance_profile" -> "[root] module.mesos.module.mesosslave-role.provider.aws"
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role.role" -> "[root] module.mesos.module.mesosslave-role.provider.aws"
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.mesos.module.mesosslave-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.mesos.module.mesosslave-role.provider.aws"
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role_policy.s3_policy" -> "[root] module.mesos.module.mesosslave-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role_policy.s3_policy" -> "[root] module.mesos.module.mesosslave-role.provider.aws"
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role_policy.tags_policy" -> "[root] module.mesos.module.mesosslave-role.aws_iam_role.role"
+		"[root] module.mesos.module.mesosslave-role.aws_iam_role_policy.tags_policy" -> "[root] module.mesos.module.mesosslave-role.provider.aws"
+		"[root] module.mesos.module.mesosslave-role.provider.aws" -> "[root] module.mesos.provider.aws (disabled)"
+		"[root] module.mesos.provider.atlas" -> "[root] provider.atlas (disabled)"
+		"[root] module.mesos.provider.aws (disabled)" -> "[root] provider.aws (disabled)"
+		"[root] module.mesos.provider.template (disabled)" -> "[root] provider.template (disabled)"
+		"[root] module.mesos.provider.terraform" -> "[root] provider.terraform (disabled)"
+		"[root] module.mesos.terraform_remote_state.vpc" -> "[root] module.mesos.provider.terraform"
+		"[root] module.vpc.atlas_artifact.nat_ami" -> "[root] module.vpc.provider.atlas"
+		"[root] module.vpc.aws_security_group_rule.nat_atlas_scada" -> "[root] module.vpc.module.vpc_base.aws_security_group.nat_sg"
+		"[root] module.vpc.aws_security_group_rule.nat_atlas_scada" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.aws_security_group_rule.nat_http" -> "[root] module.vpc.module.vpc_base.aws_security_group.nat_sg"
+		"[root] module.vpc.aws_security_group_rule.nat_http" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.aws_security_group_rule.nat_https" -> "[root] module.vpc.module.vpc_base.aws_security_group.nat_sg"
+		"[root] module.vpc.aws_security_group_rule.nat_https" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.aws_security_group_rule.nat_icmp" -> "[root] module.vpc.module.vpc_base.aws_security_group.nat_sg"
+		"[root] module.vpc.aws_security_group_rule.nat_icmp" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.aws_security_group_rule.nat_jnlp" -> "[root] module.vpc.module.vpc_base.aws_security_group.nat_sg"
+		"[root] module.vpc.aws_security_group_rule.nat_jnlp" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.aws_security_group_rule.nat_ssh" -> "[root] module.vpc.module.vpc_base.aws_security_group.nat_sg"
+		"[root] module.vpc.aws_security_group_rule.nat_ssh" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_iam_instance_profile.nat_profile" -> "[root] module.vpc.module.vpc_az.aws_iam_role.nat_role"
+		"[root] module.vpc.module.vpc_az.aws_iam_instance_profile.nat_profile" -> "[root] module.vpc.module.vpc_az.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_iam_role.nat_role" -> "[root] module.vpc.module.vpc_az.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_iam_role_policy.monitoring" -> "[root] module.vpc.module.vpc_az.aws_iam_role.nat_role"
+		"[root] module.vpc.module.vpc_az.aws_iam_role_policy.monitoring" -> "[root] module.vpc.module.vpc_az.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_instance.nat" -> "[root] module.vpc.atlas_artifact.nat_ami"
+		"[root] module.vpc.module.vpc_az.aws_instance.nat" -> "[root] module.vpc.module.vpc_az.aws_iam_instance_profile.nat_profile"
+		"[root] module.vpc.module.vpc_az.aws_instance.nat" -> "[root] module.vpc.module.vpc_az.aws_subnet.public"
+		"[root] module.vpc.module.vpc_az.aws_instance.nat" -> "[root] module.vpc.module.vpc_az.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_instance.nat" -> "[root] module.vpc.module.vpc_az.template_file.user_data"
+		"[root] module.vpc.module.vpc_az.aws_instance.nat" -> "[root] module.vpc.module.vpc_base.aws_security_group.environment"
+		"[root] module.vpc.module.vpc_az.aws_instance.nat" -> "[root] module.vpc.module.vpc_base.aws_security_group.nat_sg"
+		"[root] module.vpc.module.vpc_az.aws_route_table.private_rt" -> "[root] module.vpc.module.vpc_az.aws_instance.nat"
+		"[root] module.vpc.module.vpc_az.aws_route_table.private_rt" -> "[root] module.vpc.module.vpc_az.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_route_table.private_rt" -> "[root] module.vpc.module.vpc_base.aws_vpc.vpc"
+		"[root] module.vpc.module.vpc_az.aws_route_table_association.private_rta" -> "[root] module.vpc.module.vpc_az.aws_route_table.private_rt"
+		"[root] module.vpc.module.vpc_az.aws_route_table_association.private_rta" -> "[root] module.vpc.module.vpc_az.aws_subnet.private"
+		"[root] module.vpc.module.vpc_az.aws_route_table_association.private_rta" -> "[root] module.vpc.module.vpc_az.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_route_table_association.public_rta" -> "[root] module.vpc.module.vpc_az.aws_subnet.public"
+		"[root] module.vpc.module.vpc_az.aws_route_table_association.public_rta" -> "[root] module.vpc.module.vpc_az.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_route_table_association.public_rta" -> "[root] module.vpc.module.vpc_base.aws_route_table.public_rt"
+		"[root] module.vpc.module.vpc_az.aws_subnet.private" -> "[root] module.vpc.module.vpc_az.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_subnet.private" -> "[root] module.vpc.module.vpc_base.aws_vpc.vpc"
+		"[root] module.vpc.module.vpc_az.aws_subnet.public" -> "[root] module.vpc.module.vpc_az.provider.aws"
+		"[root] module.vpc.module.vpc_az.aws_subnet.public" -> "[root] module.vpc.module.vpc_base.aws_vpc.vpc"
+		"[root] module.vpc.module.vpc_az.provider.aws" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.module.vpc_az.provider.template" -> "[root] module.vpc.provider.template (disabled)"
+		"[root] module.vpc.module.vpc_az.template_file.user_data" -> "[root] module.vpc.module.vpc_az.provider.template"
+		"[root] module.vpc.module.vpc_base.aws_internet_gateway.igw" -> "[root] module.vpc.module.vpc_base.aws_vpc.vpc"
+		"[root] module.vpc.module.vpc_base.aws_internet_gateway.igw" -> "[root] module.vpc.module.vpc_base.provider.aws"
+		"[root] module.vpc.module.vpc_base.aws_route_table.public_rt" -> "[root] module.vpc.module.vpc_base.aws_internet_gateway.igw"
+		"[root] module.vpc.module.vpc_base.aws_route_table.public_rt" -> "[root] module.vpc.module.vpc_base.aws_vpc.vpc"
+		"[root] module.vpc.module.vpc_base.aws_route_table.public_rt" -> "[root] module.vpc.module.vpc_base.provider.aws"
+		"[root] module.vpc.module.vpc_base.aws_security_group.environment" -> "[root] module.vpc.module.vpc_base.aws_vpc.vpc"
+		"[root] module.vpc.module.vpc_base.aws_security_group.environment" -> "[root] module.vpc.module.vpc_base.provider.aws"
+		"[root] module.vpc.module.vpc_base.aws_security_group.nat_sg" -> "[root] module.vpc.module.vpc_base.aws_vpc.vpc"
+		"[root] module.vpc.module.vpc_base.aws_security_group.nat_sg" -> "[root] module.vpc.module.vpc_base.provider.aws"
+		"[root] module.vpc.module.vpc_base.aws_security_group.private_sg" -> "[root] module.vpc.module.vpc_base.aws_vpc.vpc"
+		"[root] module.vpc.module.vpc_base.aws_security_group.private_sg" -> "[root] module.vpc.module.vpc_base.provider.aws"
+		"[root] module.vpc.module.vpc_base.aws_vpc.vpc" -> "[root] module.vpc.module.vpc_base.provider.aws"
+		"[root] module.vpc.module.vpc_base.provider.aws" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.module.vpc_dhcp.aws_vpc_dhcp_options.dhcp" -> "[root] module.vpc.module.vpc_dhcp.provider.aws"
+		"[root] module.vpc.module.vpc_dhcp.aws_vpc_dhcp_options_association.dns_resolver" -> "[root] module.vpc.module.vpc_base.aws_vpc.vpc"
+		"[root] module.vpc.module.vpc_dhcp.aws_vpc_dhcp_options_association.dns_resolver" -> "[root] module.vpc.module.vpc_dhcp.aws_vpc_dhcp_options.dhcp"
+		"[root] module.vpc.module.vpc_dhcp.aws_vpc_dhcp_options_association.dns_resolver" -> "[root] module.vpc.module.vpc_dhcp.provider.aws"
+		"[root] module.vpc.module.vpc_dhcp.provider.aws" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.provider.atlas" -> "[root] provider.atlas (disabled)"
+		"[root] module.vpc.provider.aws" -> "[root] provider.aws (disabled)"
+		"[root] module.vpc.provider.template (disabled)" -> "[root] provider.template (disabled)"
+		"[root] module.zookeeper.atlas_artifact.zookeeper_ami" -> "[root] module.zookeeper.provider.atlas"
+		"[root] module.zookeeper.aws_instance.zookeeper" -> "[root] module.zookeeper.atlas_artifact.zookeeper_ami"
+		"[root] module.zookeeper.aws_instance.zookeeper" -> "[root] module.zookeeper.module.zookeeper-role.aws_iam_role.role"
+		"[root] module.zookeeper.aws_instance.zookeeper" -> "[root] module.zookeeper.provider.aws"
+		"[root] module.zookeeper.aws_instance.zookeeper" -> "[root] module.zookeeper.template_file.user_data"
+		"[root] module.zookeeper.aws_instance.zookeeper" -> "[root] module.zookeeper.terraform_remote_state.vpc"
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_instance_profile.instance_profile" -> "[root] module.zookeeper.module.zookeeper-role.aws_iam_role.role"
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_instance_profile.instance_profile" -> "[root] module.zookeeper.module.zookeeper-role.provider.aws"
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role.role" -> "[root] module.zookeeper.module.zookeeper-role.provider.aws"
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.zookeeper.module.zookeeper-role.aws_iam_role.role"
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role_policy.monitoring_policy" -> "[root] module.zookeeper.module.zookeeper-role.provider.aws"
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role_policy.s3_policy" -> "[root] module.zookeeper.module.zookeeper-role.aws_iam_role.role"
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role_policy.s3_policy" -> "[root] module.zookeeper.module.zookeeper-role.provider.aws"
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role_policy.tags_policy" -> "[root] module.zookeeper.module.zookeeper-role.aws_iam_role.role"
+		"[root] module.zookeeper.module.zookeeper-role.aws_iam_role_policy.tags_policy" -> "[root] module.zookeeper.module.zookeeper-role.provider.aws"
+		"[root] module.zookeeper.module.zookeeper-role.provider.aws" -> "[root] module.zookeeper.provider.aws"
+		"[root] module.zookeeper.provider.atlas" -> "[root] provider.atlas (disabled)"
+		"[root] module.zookeeper.provider.aws" -> "[root] provider.aws (disabled)"
+		"[root] module.zookeeper.provider.template" -> "[root] provider.template (disabled)"
+		"[root] module.zookeeper.provider.terraform" -> "[root] provider.terraform (disabled)"
+		"[root] module.zookeeper.template_file.user_data" -> "[root] module.zookeeper.provider.template"
+		"[root] module.zookeeper.terraform_remote_state.vpc" -> "[root] module.zookeeper.provider.terraform"
+	}
+}
+  </textarea>
+</textarea>
+<script src="bower_components/requirejs/require.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "d3",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "adreyponamarev <andrey.ponamarev@maxymiser.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "graphviz-d3-renderer": "^0.9.18",
+    "requirejs": "^2.2.0"
+  }
+}
